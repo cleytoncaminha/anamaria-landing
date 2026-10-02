@@ -72,7 +72,7 @@ function shell({ path, title, description, body, image = false }) {
     </div>
     <div class="container footer-bottom"><span>© ${new Date().getFullYear()} ${esc(businessName)}.</span><span>Informações sobre planos dependem das condições de cada operadora.</span></div>
   </footer>
-  <div class="mobile-action">${button('Solicitar cotação', quoteMessage, 'button button-primary')}</div>
+  ${phone ? `<a class="whatsapp-float" href="${contactHref()}" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Ana Maria pelo WhatsApp" title="Conversar pelo WhatsApp"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3.5a12.5 12.5 0 0 0-10.8 18.8L3.5 28.5l6.4-1.7A12.5 12.5 0 1 0 16 3.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11.1 10.1c.5-.4 1-.3 1.3.2l1.5 2.3c.3.5.2.9-.2 1.3l-.7.7a11 11 0 0 0 4.4 4.4l.7-.7c.4-.4.8-.5 1.3-.2l2.3 1.5c.5.3.6.8.2 1.3-.8 1.2-2.3 1.7-3.8 1.2-3.6-1.2-7.6-5.2-8.8-8.8-.5-1.5 0-3 1.2-3.8Z" fill="currentColor"/></svg></a>` : `<div class="mobile-action">${button('Solicitar cotação', quoteMessage, 'button button-primary')}</div>`}
   <script src="/assets/site.js" defer></script>
 </body>
 </html>`;
