@@ -128,6 +128,7 @@ await mkdir('dist/assets', { recursive: true });
 await cp('src/assets', 'dist/assets', { recursive: true });
 await cp('src/site.css', 'dist/assets/site.css');
 await cp('src/site.js', 'dist/assets/site.js');
+await cp('google61c658cc4a703905.html', 'dist/google61c658cc4a703905.html');
 for (const page of pages) {
   const dir = join('dist', page.path === '/' ? '' : page.path.slice(1));
   await mkdir(dir, { recursive: true });
