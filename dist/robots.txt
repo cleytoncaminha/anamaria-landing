@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://planosfortaleza-ana.vercel.app/sitemap.xml
