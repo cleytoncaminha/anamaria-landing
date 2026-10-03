@@ -6,5 +6,9 @@
   "scripts": {
     "build": "node build.mjs",
     "dev": "node preview.mjs"
+  },
+  "devDependencies": {
+    "@svgdotjs/svg.js": "^3.2.8",
+    "svgdom": "^0.1.29"
   }
 }

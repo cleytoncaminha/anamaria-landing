@@ -5,6 +5,7 @@ Site estático, responsivo e sem backend. O HTML de cada página é gerado no bu
 ## Prévia local
 
 ```bash
+npm ci
 npm run build
 npm run dev
 ```
@@ -19,7 +20,7 @@ Edite `site.config.json`:
 - `whatsapp`: número completo com código do país e DDD, apenas dígitos. Exemplo de formato: `5585999999999` (substitua pelo número real).
 - `siteUrl`: domínio final com `https://`, por exemplo `https://seudominio.com.br`.
 
-Execute `npm run build` novamente. O build ativa os links de WhatsApp e gera `sitemap.xml`, links canônicos e metadados de compartilhamento com o domínio final. Também é possível fornecer `WHATSAPP` e `SITE_URL` como variáveis de ambiente durante o build.
+Execute `npm run build` novamente. O build ativa os links de WhatsApp e gera `sitemap.xml`, links canônicos e metadados de compartilhamento com o domínio final. Também é possível fornecer `WHATSAPP` como variável de ambiente; `SITE_URL` é usada quando `siteUrl` não estiver definido em `site.config.json`.
 
 **Sem número, os botões de cotação apontam para a seção de contato e exibem que o canal ainda está em configuração.** Sem domínio, o build omite URLs canônicas e sitemap para não publicar endereços incorretos.
 
@@ -40,6 +41,10 @@ Publique o conteúdo de `dist/` na raiz do domínio. As rotas são:
 O site inclui conteúdo por intenção de busca, títulos e descrições únicos, navegação interna, HTML semântico, imagem otimizada, `robots.txt` e sitemap quando há domínio. Posição ou apresentação nos resultados do Google não é garantida por nenhuma implementação técnica.
 
 ## Imagem
+
+O balão de fala é gerado como SVG no build com SVG.js e svgdom. A mensagem permanece como texto HTML e essas bibliotecas não são carregadas no navegador.
+
+`src/assets/ana-maria-hero.webp` é o recorte transparente usado no banner principal. Foi preparado com o modo embutido de ImageGen a partir da nova foto da personagem enviada para o projeto. Prompt final: “Cut out the woman from the first attached image (gray background), retaining her exact appearance and pose, including pointing hand and open hand. Produce a full-height transparent PNG with clean edges. The second attached banner is a composition reference only. No text, scenery, or extra objects.” O PNG gerado foi convertido para WebP preservando a transparência.
 
 `src/assets/familia-fortaleza.webp` e a versão mobile foram geradas com o modo embutido de ImageGen para este projeto. A imagem é ilustrativa e não retrata a profissional.
 

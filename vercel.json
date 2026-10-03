@@ -1,5 +1,19 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "^((www\\.)?planosdesaudeceara\\.com|planosfortaleza-ana\\.vercel\\.app)$" }],
+      "destination": "https://www.planosdesaudeceara.com.br/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "^((www\\.)?planosdesaudeceara\\.com|planosfortaleza-ana\\.vercel\\.app)$" }],
+      "destination": "https://www.planosdesaudeceara.com.br/:path*",
+      "permanent": true
+    }
+  ]
 }
